@@ -1,0 +1,415 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: wildlove;
+    src: url(../fonts/wildlove.ttf);
+}
+
+body{
+    background-color: #1F1F21;
+    font-family: "wildlove";
+}
+
+.Grid{ /*Container*/
+    display: grid;
+    grid-template-rows: 200px 100px auto auto auto 50px; /* Alto de Contenedor*/
+    grid-template-columns: repeat(6, 1fr); /*Ancho de Contenedor*/
+    grid-template-areas: 
+    "header header header header header header"
+    "nav nav nav nav nav nav"
+    "main main main main main main"
+    "section section section section section section"
+    "footer footer footer footer footer footer";
+}
+
+
+.encabezado{ /* Encabezado */
+    grid-area: header;
+    background-color: #1F1F21;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    font-size: xx-large;
+    font-family: "wildlove";
+    font-style: italic;
+}
+
+.logo{ /* Logo Encabezado Tijeras*/
+    width: 200px;
+    height: 100px;
+}
+
+.logo1, .logo2{ /* Logo de Facebook e Instagram*/
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.navegador{ /* Navegador */
+    grid-area: nav;
+}
+
+.sub-navegador{ /* Barra del Navegador */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.sub-navegador1, .sub-navegador2, .sub-navegador3{ /* Menu del Navegador*/
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;     
+}
+
+.sub-navegador1 a, .sub-navegador2 a, .sub-navegador3 a{ /* Menu-Links*/
+    text-decoration: none;
+    color: white;
+    width: 550px;
+    text-align: center;
+}
+
+.sub-navegador1:hover, .sub-navegador2:hover, .sub-navegador3:hover{ /*Cambio de color Menu Hover*/
+    background-color: white;
+    color: black;
+}
+
+.sub-navegador1 a:hover, .sub-navegador2 a:hover, .sub-navegador3 a:hover{ /*Cambio de color Menu-Links Hover*/
+    transition: 0.05s;
+    color: black;
+    background-color: white;
+}
+
+.link-color{ /*Cambio de color Links*/
+    text-decoration: none;
+    color: white;
+    padding: 35px;
+}
+
+main{  /* Creacion del Main*/
+   grid-area: main;
+}
+
+.banner1, .banner2, .banner3{ /* Creacion del Banner */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner1 img, .banner2 img, .banner3 img{ /* Imagen dentro del Banner */
+    width: 50%;
+    padding: 10px;
+}   
+
+.titulo1{ /* Titulo1 */
+    font-family: wildlove;
+    font-size: 40px;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    width: 500px;
+   
+}
+
+.subtitulo1{ /* Subtitulo1 */
+    font-family: wildlove;
+    font-size: 28px;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    width: 500px;
+  
+}
+
+.titulo2{ /* Titulo2 */
+    font-family: wildlove;
+    font-size: 40px;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    width: 500px;
+}
+
+.subtitulo2{ /* Subtitulo2 */
+    font-family: wildlove;
+    font-size: 28px;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    width: 500px;
+  
+}
+
+.titulo3{ /* Titulo3 */
+    font-family: wildlove;
+    font-size: 40px;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    width: 500px;
+}
+
+.subtitulo3{ /* Subtitulo3 */
+    font-family: wildlove;
+    font-size: 28px;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    width: 500px;
+  
+}
+
+footer{ /* Pie de Pagina */
+    grid-area: footer;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    font-size: xx-large;
+    font-family: "wildlove";
+    font-style: italic;
+}
+
+/* Slider 1 Banner*/  
+
+.slider1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.slider1 {
+    position: relative;
+    max-width: 600px;
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+.slider2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.slider2 {
+    position: relative;
+    max-width: 600px;
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+.slider3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.slider3 {
+    position: relative;
+    max-width: 600px;
+    margin: 50px auto;
+    overflow: hidden;
+}
+  
+.slide {
+    display: none;
+    width: 100%;
+}
+  
+.slide.active {
+    display: block;
+}
+  
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+}
+  
+.prev {
+    left: 10px;
+}
+  
+.next {
+    right: 10px;
+}
+  
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+  
+.formulario {
+    color: rgb(0, 0, 0);
+    padding: 40px;
+    text-align: center;
+    background-color: #b3a04a;
+}
+
+.formulario input, .formulario textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.formulario button {
+    padding: 10px 30px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #ddd;
+}
+
+.telefono-oculto {
+    display: none;
+    margin-left: 20px;
+    font-size: large;
+    color: #fff;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+}
+  
+.telefono-visible {
+    display: inline-block;
+}  
+
+/* 📱 Estilos para móviles (pantallas hasta 600px) */
+
+@media (max-width: 600px) {
+    body {
+      font-size: 14px;
+    }
+  
+    .encabezado {
+      flex-direction: column;
+      font-size: large;
+      text-align: center;
+    }
+  
+    .logo {
+      width: 120px;
+      height: auto;
+    }
+  
+    .logo1, .logo2 {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .sub-navegador {
+      flex-direction: column;
+    }
+  
+    .sub-navegador1,
+    .sub-navegador2,
+    .sub-navegador3 {
+      width: 100%;
+      font-size: medium;
+    }
+  
+    .banner1 img, .banner2 img, .banner3 img {
+      width: 90%;
+    }
+  
+    .titulo1, .titulo2, .titulo3,
+    .subtitulo1, .subtitulo2, .subtitulo3 {
+      width: 90%;
+      font-size: 22px;
+    }
+  
+    .formulario input, .formulario textarea {
+      width: 95%;
+    }
+  
+    footer {
+      font-size: large;
+      text-align: center;
+    }
+  }
+  
+  /* 📱📲 Estilos para tablets (pantallas entre 601px y 1024px) */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .encabezado {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: x-large;
+    }
+  
+    .logo {
+      width: 150px;
+      height: auto;
+    }
+  
+    .logo1, .logo2 {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .sub-navegador {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  
+    .sub-navegador1,
+    .sub-navegador2,
+    .sub-navegador3 {
+      width: 100%;
+      font-size: large;
+    }
+  
+    .banner1 img, .banner2 img, .banner3 img {
+      width: 80%;
+    }
+  
+    .titulo1, .titulo2, .titulo3,
+    .subtitulo1, .subtitulo2, .subtitulo3 {
+      width: 90%;
+      font-size: 26px;
+    }
+  
+    .formulario input, .formulario textarea {
+      width: 90%;
+    }
+  
+    footer {
+      font-size: x-large;
+      text-align: center;
+    }
+  }
+  
